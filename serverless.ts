@@ -1,10 +1,11 @@
 import type { AWS } from "@serverless/typescript";
+import { notificationFunctions } from "./src/functions/notifications";
 
 const serverlessConfiguration: AWS = {
   service: "serverless-services",
   frameworkVersion: "3",
   useDotenv: true,
-  plugins: ["serverless-dotenv-plugin", "serverless-offline"],
+  plugins: ["serverless-dotenv-plugin", "serverless-offline", "serverless-plugin-typescript"],
   provider: {
     name: "aws",
     runtime: "nodejs18.x",
@@ -19,18 +20,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   functions: {
-    notifications: {
-      handler: `dist/src/functions/notifications/handler.main`,
-      events: [
-        {
-          http: {
-            method: "post",
-            path: "/send-email",
-            cors: true,
-          },
-        },
-      ],
-    },
+    ...notificationFunctions,
   },
 };
 
