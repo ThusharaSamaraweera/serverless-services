@@ -1,5 +1,6 @@
 import type { AWS } from "@serverless/typescript";
 import { notificationFunctions } from "./src/functions/notifications";
+import { testFunctions } from "./src/functions/test";
 
 const serverlessConfiguration: AWS = {
   service: "serverless-services",
@@ -19,8 +20,12 @@ const serverlessConfiguration: AWS = {
       shouldStartNameWithService: true,
     },
   },
+  package: {
+    individually: true,
+  },
   functions: {
     ...notificationFunctions,
+    ...testFunctions,
   },
 };
 
