@@ -4,8 +4,9 @@ export const main: Handler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
 
-  //@ts-ignore
-  const { message1 } = event.queryStringParameters;
+  
+  const message1 = event.queryStringParameters?.message1;
+
   return {
     statusCode: 200,
     body: JSON.stringify(
