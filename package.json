@@ -6,7 +6,8 @@
     "start": "serverless offline --stage dev --aws-profile explore-haven",
     "build": "rm -rf dist && tsc",
     "deploy": "serverless deploy --verbose --stage dev --aws-profile explore-haven",
-    "deploy:func": "serverless deploy function --verbose --stage dev --aws-profile explore-haven --function"
+    "deploy:func": "serverless deploy function --verbose --stage dev --aws-profile explore-haven --function",
+    "deploy:ci": "serverless deploy --verbose --stage dev"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.30.1",
