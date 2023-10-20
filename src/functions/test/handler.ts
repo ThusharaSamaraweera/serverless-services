@@ -11,7 +11,7 @@ export const main: Handler = async (
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: "Called test function2",
+        message: "Called test function",
         input: message1,
       },
       null,
