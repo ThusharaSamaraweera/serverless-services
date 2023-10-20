@@ -21,6 +21,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm install -g serverless@3.21.0
+    - run: npm install -g ts-node@10.9.1
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
