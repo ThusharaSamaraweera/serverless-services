@@ -7,7 +7,7 @@ export const notificationFunctions: AWS["functions"] = {
       {
         http: {
           method: "post",
-          path: "/send-email",
+          path: "notifications/send-email",
           cors: true,
         },
       },
